@@ -1,0 +1,30 @@
+{
+  "name": "resources-upload",
+  "version": "1.0.0",
+  "description": "Sample Node-Express app running on AWS Lambda",
+  "main": "./index.js",
+  "scripts": {
+    "serve": "nodemon --config nodemon.json",
+    "build": "webpack --progress",
+    "deploy": "npm run build && serverless deploy"
+  },
+  "author": "gavin",
+  "dependencies": {
+    "@koa/router": "^12.0.0",
+    "crc32": "^0.2.2",
+    "dotenv": "^16.0.3",
+    "koa": "^2.14.1",
+    "koa-bodyparser": "^4.4.0",
+    "lodash": "^4.17.21",
+    "mysql2": "^3.2.0",
+    "pdfjs-dist": "^3.5.141",
+    "sequelize": "^6.30.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@webpack-cli/generators": "^3.0.1",
+    "babel-loader": "^9.1.2",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.79.0"
+  }
+}
