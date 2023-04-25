@@ -3,6 +3,7 @@ const _ = require("lodash");
 
 const {format: wformat} = winston;
 const {Sequelize, Model, DataTypes, Op} = require("sequelize");
+const mysql2 = require("mysql2");
 
 class Issues extends Model {}
 class Cases extends Model {}
@@ -18,7 +19,7 @@ const databaseInitialize = () => {
         ]
     })
 
-    const mysqlOptions = {host: process.env.DB_HOST, dialect: 'mysql', logging: msg => logger.debug(msg)};
+    const mysqlOptions = {host: process.env.DB_HOST, dialect: 'mysql', dialectModule: mysql2, logging: msg => logger.debug(msg)};
     const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, mysqlOptions);
 
     Issues.init({

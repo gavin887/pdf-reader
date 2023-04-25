@@ -1,12 +1,17 @@
 {
-  "name": "resources-upload",
+  "name": "my-webpack-project",
   "version": "1.0.0",
-  "description": "Sample Node-Express app running on AWS Lambda",
+  "description": "My webpack project",
   "main": "./index.js",
+  "type": "commonjs",
   "scripts": {
     "serve": "nodemon --config nodemon.json",
-    "build": "webpack --progress",
-    "deploy": "npm run build && serverless deploy"
+    "build": "webpack --mode=production --node-env=production",
+    "deploy": "npm run build && serverless deploy",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "clean": "rimraf ./dist/",
+    "watch": "webpack --watch"
   },
   "author": "gavin",
   "dependencies": {
@@ -17,14 +22,19 @@
     "koa-bodyparser": "^4.4.0",
     "lodash": "^4.17.21",
     "mysql2": "^3.2.0",
+    "node-loader": "^2.0.0",
     "pdfjs-dist": "^3.5.141",
-    "sequelize": "^6.30.0"
+    "sequelize": "^6.30.0",
+    "serverless-http": "^3.2.0",
+    "winston": "^3.8.2"
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@webpack-cli/generators": "^3.0.1",
     "babel-loader": "^9.1.2",
     "html-webpack-plugin": "^5.5.0",
-    "webpack": "^5.79.0"
+    "prettier": "^2.8.8",
+    "webpack": "^5.80.0",
+    "webpack-cli": "^5.0.2"
   }
 }
