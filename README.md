@@ -70,7 +70,7 @@ other api see  [HttpApi](#httpapi)
   - import new issue page
 
 + `POST /new_issue`
-  - param `url`: google drive url
+  - param `url`: PDF file url on Google-drive
 
 + `GET /issues?date={issueDate}`
   - param `issueDate`: PDF issue date
