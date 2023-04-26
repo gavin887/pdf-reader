@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Installation</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h2 id="installation">Installation</h2>
+<h3 id="1install-dependency">1、Install dependency</h3>
+<pre><code class="language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">npm install</span>
+</code></pre>
+<video src="./docs/0x01.webm" width="1080" controls>
+  你的浏览器不支持 <code>video</code> 标签。
+</video>
+<hr>
+<h3 id="2setup-mysql-configration">2、Setup MySQL configration</h3>
+<p>config file: <code>.env</code></p>
+<pre><code class="language-ini"><span class="hljs-attr">DB_HOST</span>=<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>
+<span class="hljs-attr">DB_USER</span>=username
+<span class="hljs-attr">DB_PASS</span>=password
+<span class="hljs-attr">DB_NAME</span>=database_name
+</code></pre>
+<hr>
+<h3 id="3start-server">3、Start server</h3>
+<p>read  <code>scripts</code> in <code>package.json</code>.</p>
+<pre><code class="language-shell">  ...
+  &quot;serve&quot;: &quot;nodemon --config nodemon.json&quot;,
+  &quot;build&quot;: &quot;webpack --mode=production --node-env=production&quot;,
+  &quot;deploy&quot;: &quot;npm run build &amp;&amp; serverless deploy&quot;,
+  &quot;build:dev&quot;: &quot;webpack --mode=development&quot;,
+  &quot;build:prod&quot;: &quot;webpack --mode=production --node-env=production&quot;,
+  &quot;clean&quot;: &quot;rimraf ./dist/&quot;,
+  &quot;watch&quot;: &quot;webpack --watch&quot;
+  ...
+</code></pre>
+<p>run <code>npm run serve</code>, then you will seen this below.</p>
+<pre><code class="language-shell"><span class="hljs-meta prompt_">$ </span><span class="language-bash">npm run serve</span>
+warning package.json: No license field
+<span class="hljs-meta prompt_">$ </span><span class="language-bash">nodemon --config nodemon.json</span>
+[nodemon] 2.0.22
+[nodemon] reading config .\nodemon.json      
+[nodemon] to restart at any time, enter `rs` 
+[nodemon] or send SIGHUP to 17716 to restart 
+[nodemon] watching path(s): index.js src\**\*
+[nodemon] watching extensions: js,json,html  
+[nodemon] starting `node ./index.js`
+[nodemon] spawning
+[nodemon] child pid: 26436
+[nodemon] watching 5 files
+Listen on http://localhost:3000/ ...
+</code></pre>
+<video src="./docs/0x03.webm" width="1080" controls>
+  你的浏览器不支持 <code>video</code> 标签。
+</video>
+<p>Open <code>http://localhost:3000/new_issue</code>  in browser.</p>
+<video src="./docs/0x04.webm" width="1080" controls>
+  你的浏览器不支持 <code>video</code> 标签。
+</video>
+<p>other api see  <a href="#httpapi">HttpApi</a></p>
+<hr>
+<h2 id="httpapi">HttpApi</h2>
+<ul>
+<li>
+<p><code>GET /new_issue</code></p>
+<ul>
+<li>import new issue page</li>
+</ul>
+</li>
+<li>
+<p><code>POST /new_issue</code></p>
+<ul>
+<li>param <code>url</code>: PDF file url on Google-drive</li>
+</ul>
+</li>
+<li>
+<p><code>GET /issues?date={issueDate}</code></p>
+<ul>
+<li>param <code>issueDate</code>: PDF issue date</li>
+</ul>
+</li>
+<li>
+<p><code>GET /cases</code></p>
+<ul>
+<li>param <code>fileSign</code>: PDF file Crc32</li>
+<li>param <code>issueDate</code>: PDF issue date</li>
+<li>param <code>page</code>: Page of PDF file</li>
+<li>param <code>audienceNumber</code>: Audience number</li>
+<li>param <code>audienceType</code>: Audience type</li>
+<li>param <code>secretary</code>: secretary</li>
+<li>param <code>numExp</code>: num. exp.</li>
+<li>param <code>caseInfo</code>: case full body</li>
+</ul>
+</li>
+</ul>
+
+        <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+        
+    </body>
+    </html>

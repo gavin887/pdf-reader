@@ -5,8 +5,6 @@
 
 ```shell
 $ npm install
-// or 
-$ yarn install
 ```
 
 <video src="./docs/0x01.webm" width="1080" controls>
@@ -16,6 +14,8 @@ $ yarn install
 ---
 
 ### 2、Setup MySQL configration
+
+config file: `.env`  
 
 ```ini
 DB_HOST=127.0.0.1
@@ -44,8 +44,7 @@ read  `scripts` in `package.json`.
 
 run `npm run serve`, then you will seen this below.
 ```shell
-$ yarn serve
-yarn run v1.22.19
+$ npm run serve
 warning package.json: No license field
 $ nodemon --config nodemon.json
 [nodemon] 2.0.22
