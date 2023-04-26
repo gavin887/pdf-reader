@@ -52,7 +52,6 @@ router.post('/new_issue', async (ctx, next) => {
     let fileId = /\/([0-9a-zA-Z]{26,40})/.exec(url)[1];
     let fileDownloadURL = `https://drive.google.com/uc?id=${fileId}&export=download`;
 
-    fileDownloadURL = 'http://demo.1008.com/demo.pdf';
     logger.debug("Download url :>> " + fileDownloadURL);
     let fileArrayBuffer = await fetch(fileDownloadURL)
         .then(response => response.arrayBuffer());

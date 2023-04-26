@@ -9,6 +9,10 @@ $ npm install
 $ yarn install
 ```
 
+<video src="./docs/0x01.webm" width="1080" controls>
+  你的浏览器不支持 <code>video</code> 标签。
+</video>
+
 ---
 
 ### 2、Setup MySQL configration
@@ -57,7 +61,20 @@ $ nodemon --config nodemon.json
 Listen on http://localhost:3000/ ...
 ```
 
+
+<video src="./docs/0x03.webm" width="1080" controls>
+  你的浏览器不支持 <code>video</code> 标签。
+</video>
+
+
 Open `http://localhost:3000/new_issue`  in browser.
+
+
+
+<video src="./docs/0x04.webm" width="1080" controls>
+  你的浏览器不支持 <code>video</code> 标签。
+</video>
+
 
 
 other api see  [HttpApi](#httpapi)

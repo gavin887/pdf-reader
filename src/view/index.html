@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>PDF file upload</title>
     <style rel="text/css">
-        .demo { width: 320px; margin: 200px auto }
-        form { width: 320px; padding: 20px;}
+        .demo { width: 820px; margin: 200px auto }
+        form { width: 820px; padding: 20px;}
         .form-item { height: 32px; line-height: 32px; }
         .form-operation { height: 32px; line-height: 32px; text-align: center }
         .form-item label { display:inline-block; width: 60px; text-align: right }
@@ -19,7 +19,10 @@
             <form action="new_issue" method="post" enctype="application/x-www-form-urlencoded">
                 <div class="form-item">
                     <label for="url">url:</label>
-                    <span><input id="url" name="url" type="text" value="" /></span>
+                    <span>
+                        <input id="url" name="url" style="width: 720px;" type="text" 
+                            value="https://drive.google.com/file/d/1U9MCXnAHrR2MXtYLxuY6pn9uotQ2ntkN/view?usp=share_link" length="200" maxlength="400" />
+                    </span>
                 </div>
                 <div class="form-operation">
                     <button type="submit">Submit</button>
